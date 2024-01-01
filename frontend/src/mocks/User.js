@@ -86,7 +86,7 @@ class UserAPI {
     }
   }
 }
-const UserAPI = new UserAPI();
+const userAPI = new UserAPI();
 
-export default UserAPI;
-UserAPI.login;
+export default userAPI;
+ userAPI.login();

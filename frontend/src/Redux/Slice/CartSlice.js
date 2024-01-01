@@ -16,7 +16,8 @@ const cartSlice=createSlice({
         removeCartItem(state,action){
             const id=action.payload;
             state.cartItems=state.cartItems.filter((x)=>x._id !==id);
-            localStorage.setItem("cartItems"),JSON.stringify(state.cartItems);
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+
 
         },
         setShippingAddress(state,action){

@@ -58,5 +58,5 @@ class ProductAPI{
     
 
 }
-const ProductAPI=new ProductAPI();
-export default ProductAPI;
+const productAPI=new ProductAPI();
+export default productAPI;
