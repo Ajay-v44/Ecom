@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import UserAPI from '../../mocks/User';
+import { createSlice } from "@reduxjs/toolkit";
+import UserAPI from "../../mocks/User";
 
 const storedUserInfo = localStorage.getItem("userInfo");
 
@@ -10,7 +10,7 @@ const initialState = {
 };
 
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
     loginStart(state) {
@@ -77,7 +77,6 @@ const userSlice = createSlice({
       state.loading = false;
       state.error = null;
       localStorage.removeItem("userInfo");
-
     },
     deleteUserFailure(state, action) {
       state.loading = false;
@@ -114,7 +113,7 @@ export const {
 export const login = (email, password) => async (dispatch) => {
   try {
     dispatch(loginStart());
-    const user = await userAPI.login(email, password);
+    const user = await UserAPI.login(email, password);
     dispatch(loginSuccess(user));
   } catch (error) {
     dispatch(loginFailure(error.message));
@@ -124,7 +123,7 @@ export const login = (email, password) => async (dispatch) => {
 export const fetchUserDetails = (userId) => async (dispatch) => {
   try {
     dispatch(getUserDetailsStart());
-    const userDetails = await userAPI.getUserDetails( );
+    const userDetails = await UserAPI.getUserDetails();
     dispatch(getUserDetailsSuccess(userDetails));
   } catch (error) {
     dispatch(getUserDetailsFailure(error.message));
@@ -134,9 +133,9 @@ export const fetchUserDetails = (userId) => async (dispatch) => {
 export const createUser = (name, email, password) => async (dispatch) => {
   try {
     dispatch(createUserStart());
-    const user = await userAPI.createUser(name, email, password);
+    const user = await UserAPI.createUser(name, email, password);
     dispatch(createUserSuccess(user));
-    dispatch(loginSuccess(user));  
+    dispatch(loginSuccess(user));
   } catch (error) {
     dispatch(createUserFailure(error.message));
   }
@@ -145,7 +144,7 @@ export const createUser = (name, email, password) => async (dispatch) => {
 export const updateUser = (userId, updateData) => async (dispatch) => {
   try {
     dispatch(updateUserStart());
-    const updatedUser = await userAPI.updateUser(userId, updateData);
+    const updatedUser = await UserAPI.updateUser(userId, updateData);
     dispatch(updateUserSuccess(updatedUser));
   } catch (error) {
     dispatch(updateUserFailure(error.message));
@@ -155,12 +154,11 @@ export const updateUser = (userId, updateData) => async (dispatch) => {
 export const deleteUser = (userId) => async (dispatch) => {
   try {
     dispatch(deleteUserStart());
-    await userAPI.deleteUser(userId);
+    await UserAPI.deleteUser(userId);
     dispatch(deleteUserSuccess());
   } catch (error) {
     dispatch(deleteUserFailure(error.message));
-  } 
-
+  }
 };
 
 export const logout = () => (dispatch) => {
