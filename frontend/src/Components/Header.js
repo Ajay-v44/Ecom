@@ -10,9 +10,9 @@ import {
 } from "@material-ui/core";
 import { ShoppingCart, AccountCircle } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
-import SearchBox from "./SearchBox";
+import SearchBox from "./Searchbox";
 import logo from "../logo.png";
-import { logout } from "../redux/slices/userSlice";
+import { logout } from "../Redux/Slice/userSlice";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {

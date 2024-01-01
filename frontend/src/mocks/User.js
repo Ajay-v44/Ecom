@@ -40,7 +40,8 @@ class UserAPI {
       const token = JSON.parse(localStorage.getItem("userInfo")).token;
       const config = {
         headers: {
-          Authorization: `Barer ${token} `,
+          Authorization: `Bearer ${token} `,
+
         },
       };
       const { data } = await axios.put(
@@ -74,7 +75,7 @@ class UserAPI {
 
   async login(email, password) {
     try {
-      const { data } = await axios.post("api/users/login/", {
+      const { data } = await axios.post("/api/users/login/", {
         username: email,
         password: password,
       });

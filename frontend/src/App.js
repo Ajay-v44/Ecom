@@ -13,7 +13,7 @@ import PaymentScreen from "./Screens/PaymentScreen";
 import PlaceOrder from "./Screens/PlaceOrder";
 import OrderScreen from "./Screens/OrderScreen";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
 function App() {
@@ -25,19 +25,21 @@ function App() {
         </div>
         <Container>
           <main className="py-3">
-            <Route path="/" Component={HomeScreen} />
-            <Route path="/login" Component={LogiinScreen} />
-            <Route path="/register" Component={RegisterScreen} />
-            <Route path="/profile" Component={ProfileSecreeen} />
-            <Route path="/shipping" Component={ShippingScreen} />
-            <Route path="/payment" Component={PaymentScreen} />
-            <Route path="/placeorder" Component={PlaceOrder} />
-            <Route path="/orderDetail" Component={OrderScreen} />
-            <Route path="/product/:id" Component={ProductScreen} />
-            <Route path="/cart/:id" Component={CartScreen} />
+            <Routes>
+              <Route path="/" element={<HomeScreen />} />
+              <Route path="/login" element={<LogiinScreen />} />
+              <Route path="/register" element={<RegisterScreen />} />
+              <Route path="/profile" element={<ProfileSecreeen />} />
+              <Route path="/shipping" element={<ShippingScreen />} />
+              <Route path="/payment" element={<PaymentScreen />} />
+              <Route path="/placeorder" element={<PlaceOrder />} />
+              <Route path="/orderDetail" element={<OrderScreen />} />
+              <Route path="/product/:id" element={<ProductScreen />} />
+              <Route path="/cart/:id" element={<CartScreen />} />
+            </Routes>
           </main>
         </Container>
-        <Footer/>
+        <Footer />
       </Router>
     </>
   );

@@ -7,7 +7,8 @@ import Message from "../Components/Message";
 import ProductCarousel from "../Components/ProducCarousel";
 import { fetchProductList } from "../Redux/Slice/productSlice";
 import Paginate from "../Components/Pagginate";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom";
+
 function HomeScreen({ history }) {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.product.productList);
