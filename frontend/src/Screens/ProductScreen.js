@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchProductDetails,
   createReview 
-  } from "../Redux/Slice/productSlice";
+  } from "../Redux/Slice/ProductSlice";
   
 import Rating from "../Components/Rating";
 import Loader from "../Components/Loader";

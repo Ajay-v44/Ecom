@@ -5,7 +5,7 @@ import Product from "../Components/Product";
 import Loader from "../Components/Loader";
 import Message from "../Components/Message";
 import ProductCarousel from "../Components/ProducCarousel";
-import { fetchProductList } from "../Redux/Slice/productSlice";
+import { fetchProductList } from "../Redux/Slice/ProductSlice";
 import Paginate from "../Components/Pagginate";
 import { useParams } from "react-router-dom";
 

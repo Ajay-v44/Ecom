@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import Message from "./Message";
-import { fetchTopRatedProducts } from "../Redux/Slice/productSlice";
+import { fetchTopRatedProducts } from "../Redux/Slice/ProductSlice";
 
 function ProductCarousel() {
   const dispatch = useDispatch();
